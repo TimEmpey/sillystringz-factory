@@ -29,9 +29,9 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Machine course)
+    public ActionResult Create(Machine machine)
     {
-      _db.Machines.Add(course);
+      _db.Machines.Add(machine);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -39,37 +39,37 @@ namespace Factory.Controllers
     public ActionResult Details(int id)
     {
       var thisMachine = _db.Machines
-        .Include(course => course.JoinEntities)
+        .Include(machine => machine.JoinEntities)
         .ThenInclude(join => join.Engineer)
-        .FirstOrDefault(course => course.MachineId == id);
+        .FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
     }
 
     public ActionResult Edit(int id)
     {
-      var thisMachine = _db.Machines.FirstOrDefault(course => course.MachineId == id);
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
       return View(thisMachine);
     }
 
     [HttpPost]
-    public ActionResult Edit(Machine course)
+    public ActionResult Edit(Machine machine)
     {
-      _db.Entry(course).State = EntityState.Modified;
+      _db.Entry(machine).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisMachine = _db.Machines.FirstOrDefault(course => course.MachineId == id);
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisMachine = _db.Machines.FirstOrDefault(course => course.MachineId == id);
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       _db.Machines.Remove(thisMachine);
       _db.SaveChanges();
       return RedirectToAction("Index");
