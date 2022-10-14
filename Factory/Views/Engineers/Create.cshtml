@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Engineer
+
+<h4>Add a new Engineer</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.Label("Select machine")
+  @Html.DropDownList("MachineId")
+
+  <input type="submit" value="Add new item" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
