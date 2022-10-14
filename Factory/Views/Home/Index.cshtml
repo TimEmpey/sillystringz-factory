@@ -2,33 +2,42 @@
   Layout = "_Layout";
 }
 
+<link rel="stylesheet" href="~/css/styles.css">
+
 @using Factory.Models;
-@model dynamic;
 
 <h1>Dr. Sillystringz Factory</h1>
 
-<h2>Machines</h2>
+<div class="machines">
+  <h2>Machines | @Html.ActionLink("New Machine", "Create", "Machines")</h2>
 
-@if (@Model.Count == 0)
-{
-  <h3>No machines have been added yet!</h3>
-} 
-
-<ul>
-  @foreach(Machine machine in Model)
+  @if (@Model.Count == 0)
   {
-    <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
-  }
-</ul>
+    <h3>No machines have been added yet!</h3>
+  } 
 
-<h2>Engineers</h2>
+  <ul>
+    @foreach(Machine machine in ViewBag.Machine)
+    {
+      <p>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId })</p>
+    }
+  </ul>  
+</div>
 
-@if (@Model.Count == 0)
-{
-  <h3>No engineers have been added yet!</h3>
-} 
 
-@foreach (Engineer engineer in Model)
-{
-  <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
-}
+<div class="engineers">
+  <h2>Engineers | @Html.ActionLink("New Engineer", "Create", "Engineers")</h2>
+
+  @if (@Model.Count == 0)
+  {
+    <h3>No engineers have been added yet!</h3>
+  } 
+
+  <ul>
+    @foreach (Engineer engineer in ViewBag.Engineer)
+    {
+      <p>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })</p>
+    } 
+  </ul>  
+</div>
+

@@ -1,0 +1,19 @@
+h2{
+  margin-left: 57px;
+}
+
+p{
+  margin-right: 40px;
+}
+
+.engineers{
+  float: right;
+  width: 50%;
+  text-align: center;
+}
+
+.machines{
+  float: left;
+  width: 50%;
+  text-align: center;
+}
