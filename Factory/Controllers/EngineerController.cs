@@ -37,7 +37,7 @@ namespace Factory.Controllers
         _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = engineer.EngineerId});
         _db.SaveChanges();
       }
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
 
     public ActionResult Details(int id)
@@ -65,7 +65,7 @@ namespace Factory.Controllers
       }
       _db.Entry(engineer).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
 
     public ActionResult AddMachine(int id)
@@ -83,7 +83,7 @@ namespace Factory.Controllers
         _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = engineer.EngineerId});
         _db.SaveChanges();
       }
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
 
     public ActionResult Delete(int id)
@@ -98,7 +98,7 @@ namespace Factory.Controllers
       var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
       _db.Engineers.Remove(thisEngineer);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
 
     [HttpPost]
@@ -107,7 +107,7 @@ namespace Factory.Controllers
       var joinEntry = _db.MachineEngineer.FirstOrDefault(entry => entry.MachineEngineerId == joinId);
       _db.MachineEngineer.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
   }
 }

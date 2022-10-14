@@ -3,7 +3,7 @@
 }
 
 @using Factory.Models;
-@model List<Factory.Models.Engineer>
+@model dynamic;
 
 <h1>Dr. Sillystringz Factory</h1>
 
@@ -30,5 +30,5 @@
 
 @foreach (Engineer engineer in Model)
 {
-  <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.engineerId })</li>
+  <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
 }
