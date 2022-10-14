@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model UniversityRegistrar.Models.Machine
+@model Factory.Models.Machine
 
 <h2>Edit</h2>
 
@@ -14,9 +14,6 @@
 
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
-
-  @Html.LabelFor(model => model.MachineNumber)
-  @Html.EditorFor(model => model.MachineNumber)
 
   @Html.Label("Select Engineer")
   @Html.DropDownList("EngineerId")
