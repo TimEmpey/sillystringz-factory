@@ -4,21 +4,21 @@
 
 @model Factory.Models.Engineer
 
-<h2>Edit</h2>
+<div class="form">
+  <h2>Edit</h2>
 
-<h4>Update Engineer Details: @Html.DisplayFor(model => model.Name)</h4>
+  <h4>Update Engineer Details: @Html.DisplayFor(model => model.Name)</h4>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.EngineerId)
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
 
-  @Html.Label("Select Machine")
-  @Html.DropDownList("MachineId")
+    @Html.Label("Select Machine")
+    @Html.DropDownList("MachineId")
 
-  <input type="submit" value="Save" />
-}
-
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+    <input type="submit" value="Save" />
+  }
+</div>

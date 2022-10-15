@@ -5,13 +5,15 @@
 @using Factory.Models
 @model Factory.Models.Machine
 
-<h4>Add a new Machine</h4>
-@using (Html.BeginForm())
-{
+<div class="form">
+  <h4>Add a new Machine</h4>
+  @using (Html.BeginForm())
+  {
 
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
 
-  <input type="submit" value="Add new machine" />
-}
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+    <input type="submit" value="Add new machine" class="btn btn-default"/>
+  }  
+</div>
+

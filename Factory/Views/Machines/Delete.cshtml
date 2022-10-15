@@ -6,11 +6,13 @@
 
 @model Factory.Models.Machine
 
-<h2>Are you sure you want to delete this machine?</h2>
+<div class="form">
+  <h2>Are you sure you want to delete this machine?</h2>
 
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" />
-}
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+  @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" />
+  }
+</div>
+

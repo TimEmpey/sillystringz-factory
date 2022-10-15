@@ -4,18 +4,18 @@
 
 @model Factory.Models.Engineer
 
-<h2>Add a Machine</h2>
+<div class="form">
+  <h2>Add a Machine</h2>
 
-<h4>Select Qualifying Machine: @Html.DisplayFor(model => model.Name)</h4>
+  <h4>Select Qualifying Machine: @Html.DisplayFor(model => model.Name)</h4>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.EngineerId);
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId);
 
-  @Html.Label("Select machine");
-  @Html.DropDownList("MachineId");
+    @Html.Label("Select machine");
+    @Html.DropDownList("MachineId");
 
-  <input type="submit" value="Save" />
-}
-
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+    <input type="submit" value="Save" />
+  }
+</div>

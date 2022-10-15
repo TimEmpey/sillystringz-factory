@@ -4,18 +4,18 @@
 
 @using Factory.Models;
 
-<h1>Dr. Sillystringz Factory</h1>
+<div class="form">
+  <h2>Engineers</h2>
 
-<h2>Engineers</h2>
-
-@if (@Model.Count == 0)
-{
-  <h3>No engineers have been added yet!</h3>
-} 
-
-<ul>
-  @foreach(Engineer engineer in Model)
+  @if (@Model.Count == 0)
   {
-    <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
-  }
-</ul>
+    <h3>No engineers have been added yet!</h3>
+  } 
+
+  <ul>
+    @foreach(Engineer engineer in Model)
+    {
+      <p>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</p>
+    }
+  </ul>
+</div>

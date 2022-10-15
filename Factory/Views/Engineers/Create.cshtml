@@ -4,13 +4,14 @@
 
 @model Factory.Models.Engineer
 
-<h4>Add a new Engineer</h4>
+<div class="form">
+  <h4>Add a new Engineer</h4>
 
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
 
-  <input type="submit" value="Add new item" class="btn btn-default" />
-}
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+    <input type="submit" value="Add Engineer" class="btn btn-default" />
+  }
+</div>
